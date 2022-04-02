@@ -1,5 +1,8 @@
 <template>
-	  <button @click="emitCall">값을 바꿔주세요</button>
+  <div id="app-4">
+	  <p>{{ message }} </p>
+	  <button v-on:click="reverseMessage">메세지 뒤집기</button>
+  </div>
 </template>
 
 <script>
@@ -9,21 +12,16 @@ var code = {
 export default {
   el: '#example-2',
   name: 'HelloWorld',
-  props: ['prop'],
   data: function() {
 	return {
+		message: '안녕~ vue.js 안녕하세요~ 진짜루~'
 	}
   },
   methods: {
-	  // emitCall() {
-	  // console.log("emitCall")
-	  // this.$emit('hello', ''b') // to parent
-	  // },
-	  // sub: function() {
-	  // console.log("sub")
-	  // //this.result = this.a - this.b
-	  // this.result = this.a - this.b
-	  // }
+	  reverseMessage() {
+		  console.log("reverseMessage")
+		  this.message = this.message.split('').reverse().join('');
+	  }
   }
 }
 </script>

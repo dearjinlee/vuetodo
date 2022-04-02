@@ -1,5 +1,11 @@
 <template>
-	  <button @click="emitCall">값을 바꿔주세요</button>
+  <div class="hello">
+	<ul id="example-2">
+		<li v-for="value in object">
+			{{ value }}
+		</li>
+	</ul>
+  </div>
 </template>
 
 <script>
@@ -9,22 +15,15 @@ var code = {
 export default {
   el: '#example-2',
   name: 'HelloWorld',
-  props: ['prop'],
   data: function() {
 	return {
+		object: {
+			title: 'How to do',
+			author: 'Jane',
+			publishedAt: '20202.-03-10'
+		}
 	}
   },
-  methods: {
-	  // emitCall() {
-	  // console.log("emitCall")
-	  // this.$emit('hello', ''b') // to parent
-	  // },
-	  // sub: function() {
-	  // console.log("sub")
-	  // //this.result = this.a - this.b
-	  // this.result = this.a - this.b
-	  // }
-  }
 }
 </script>
 

@@ -15,15 +15,15 @@ export default {
 	}
   },
   methods: {
-	  // emitCall() {
-	  // console.log("emitCall")
-	  // this.$emit('hello', ''b') // to parent
-	  // },
-	  // sub: function() {
-	  // console.log("sub")
-	  // //this.result = this.a - this.b
-	  // this.result = this.a - this.b
-	  // }
+	  emitCall() {
+		  console.log("emitCall")
+		  this.$emit('hello', "b") // to parent
+	  },
+	  sub: function() {
+		  console.log("sub")
+		  //this.result = this.a - this.b
+		  this.result = this.a - this.b
+	  }
   }
 }
 </script>

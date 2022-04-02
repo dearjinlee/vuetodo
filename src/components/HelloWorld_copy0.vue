@@ -1,5 +1,13 @@
 <template>
-	  <button @click="emitCall">값을 바꿔주세요</button>
+  <div class="hello">
+	<!-- <input type="text" v-model="msg" /> -->
+	<!-- <h3 v-if="flag"> flag 값이 true 일때만 나옵니다. </h3> -->
+	
+	<ul v-for="item in items">
+		<!-- <li> {{ item.name}} </li> -->
+		<li> {{ item.name + " 의 가격은 " + item.price + "입니다" }} </li>
+	</ul>
+  </div>
 </template>
 
 <script>
@@ -7,24 +15,18 @@ var code = {
 	name:'a', age:'10',
 };
 export default {
-  el: '#example-2',
   name: 'HelloWorld',
-  props: ['prop'],
   data: function() {
 	return {
+		msg: 'vue.js입니다.',
+		flag: true,
+		items: [
+			{name:'피자', price:'23000'},
+			{name:'햄버거', price:'6000'},
+			{name:'떡볶이', price:'10000'},
+		],
 	}
   },
-  methods: {
-	  // emitCall() {
-	  // console.log("emitCall")
-	  // this.$emit('hello', ''b') // to parent
-	  // },
-	  // sub: function() {
-	  // console.log("sub")
-	  // //this.result = this.a - this.b
-	  // this.result = this.a - this.b
-	  // }
-  }
 }
 </script>
 

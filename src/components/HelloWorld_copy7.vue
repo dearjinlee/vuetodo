@@ -1,5 +1,9 @@
 <template>
-	  <button @click="emitCall">값을 바꿔주세요</button>
+  <div id="app-4">
+	  <button v-on:click="counter += 1">Add 1</button>
+	  <p>위 버튼을 클릭한 횟수는 {{ counter }} 번 입니다.</p>
+	  <p>{{ name }}님의 나이는 {{ age }} 입니다.</p>
+  </div>
 </template>
 
 <script>
@@ -9,21 +13,18 @@ var code = {
 export default {
   el: '#example-2',
   name: 'HelloWorld',
-  props: ['prop'],
   data: function() {
 	return {
+		name : "Jin",
+		age : 20,
+		counter: 0
 	}
   },
   methods: {
-	  // emitCall() {
-	  // console.log("emitCall")
-	  // this.$emit('hello', ''b') // to parent
-	  // },
-	  // sub: function() {
-	  // console.log("sub")
-	  // //this.result = this.a - this.b
-	  // this.result = this.a - this.b
-	  // }
+	  reverseMessage() {
+		  console.log("reverseMessage")
+		  this.message = this.message.split('').reverse().join('');
+	  }
   }
 }
 </script>

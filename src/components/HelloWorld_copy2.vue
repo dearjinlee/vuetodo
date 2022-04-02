@@ -1,5 +1,28 @@
 <template>
-	  <button @click="emitCall">값을 바꿔주세요</button>
+<!--
+  <div class="hello">
+	<p v-if="seen">
+		이제 나를 볼 수 있어요.
+	</p>
+  </div>
+-->
+  <div class="hello">
+	<p v-if="seen">
+		이제 나를 볼 수 있어요.
+	</p>
+	<div v-if="type === 'A'">
+		  A~
+	</div>
+	<div v-else-if="type === 'B'">
+		  B~
+	</div>
+	<div v-else-if="type === 'C'">
+		  C~
+	</div>
+	<div v-else>
+		  Not A/B/C
+	</div>
+  </div>
 </template>
 
 <script>
@@ -7,24 +30,20 @@ var code = {
 	name:'a', age:'10',
 };
 export default {
-  el: '#example-2',
   name: 'HelloWorld',
-  props: ['prop'],
   data: function() {
 	return {
+		type: 'A',
+		seen: true,
+		msg: 'vue.js입니다.',
+		flag: true,
+		items: [
+			{name:'피자', price:'23000'},
+			{name:'햄버거', price:'6000'},
+			{name:'떡볶이', price:'10000'},
+		],
 	}
   },
-  methods: {
-	  // emitCall() {
-	  // console.log("emitCall")
-	  // this.$emit('hello', ''b') // to parent
-	  // },
-	  // sub: function() {
-	  // console.log("sub")
-	  // //this.result = this.a - this.b
-	  // this.result = this.a - this.b
-	  // }
-  }
 }
 </script>
 

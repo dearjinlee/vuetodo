@@ -1,5 +1,11 @@
 <template>
-	  <button @click="emitCall">값을 바꿔주세요</button>
+  <div id="app-4">
+	  <input v-mode="a"></input>
+	  <input v-mode="n"></input>
+	  <button v-on:click="add">Add</button>
+	  <button v-on:click="sub">Sub</button>
+	  <p>위 버튼을 클릭한 횟수는 {{ result }} 번 입니다.</p>
+  </div>
 </template>
 
 <script>
@@ -9,21 +15,24 @@ var code = {
 export default {
   el: '#example-2',
   name: 'HelloWorld',
-  props: ['prop'],
   data: function() {
 	return {
+		a : 0,
+		b : 0,
+		result : 0
 	}
   },
   methods: {
-	  // emitCall() {
-	  // console.log("emitCall")
-	  // this.$emit('hello', ''b') // to parent
-	  // },
-	  // sub: function() {
-	  // console.log("sub")
-	  // //this.result = this.a - this.b
-	  // this.result = this.a - this.b
-	  // }
+	  add: function() {
+		  console.log("add")
+		  //this.result = this.a + this.b
+		  this.result = this.a + this.b
+	  },
+	  sub: function() {
+		  console.log("sub")
+		  //this.result = this.a - this.b
+		  this.result = this.a - this.b
+	  }
   }
 }
 </script>
