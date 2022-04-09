@@ -1,18 +1,22 @@
 <template>
   <div id="app">
+    <Header />
     <Todolist />
+	<Footer />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
 import Todolist from './components/Todolist.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-	Todolist
+    Header,
+	Todolist,
+	Footer
   },
   data:function() {
 	  return {
