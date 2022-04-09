@@ -19,7 +19,7 @@
             <!-- ul.todo_list -->
             <ul class="todo_list">
                 <li class="todo_list_tit"><p>할 일</p></li>
-                <li class="todo_list_tit"><p>할 일</p></li>
+                <li><p> {{ remaining }} / {{ todolist.length }} 건 처리 </p></li>
 
                 <li class="del_btn" v-for="(item,index) in todolist" :key="index">
                     <p :class="{doneStyle:item.done}"><input type="checkbox" name="check1" v-model="item.done">{{ item.todo }}</p>
@@ -57,6 +57,19 @@ export default {
 		]
 	}
   },
+  computed:{
+	  remaining() {
+		  /*
+		  this.todolist.filter(function(val){
+			  console.log(val);
+		  })
+		  return 0;
+		  */
+		  return this.todolist.filter(function(val){
+			  return val.done;
+		  }).length;
+	  }
+  },
   methods:{
 	  addTodo(val){
 		  console.log(val);
@@ -64,9 +77,6 @@ export default {
 	  },
 	  subTodo(idx){
 		  this.todolist.splice(idx, 1);
-	  },
-	  updateTodo(idx){
-		  //this.todolist.splice(idx, 1);
 	  }
   }
 }
